@@ -6,8 +6,9 @@ import os
 #pip install opencv-python
 
 # image_folder = 'images'
-image_folder = os.getcwd() + "\Test_Image"
+image_folder = os.getcwd() + "\images"
 video_name = 'video.avi'
+FPS = 10
 
 #1. 모든 이미지 파일의 파일명을 리스트로 변환
 images = [img for img in os.listdir(image_folder) if img.endswith(".png")]
@@ -20,7 +21,7 @@ height, width, layers = frame.shape
 
 #3. 비디오 생성
 # *은 'D', 'I', 'V', 'X' 이렇게 문자열을 문자로
-video = cv2.VideoWriter(video_name, cv2.VideoWriter_fourcc(*'DIVX'), 15, (width, height))
+video = cv2.VideoWriter(video_name, cv2.VideoWriter_fourcc(*'DIVX'), FPS, (width, height))
 
 #4. 이미지 파일을 하나씩 가져와서 비디오에 추가
 for image in images:
