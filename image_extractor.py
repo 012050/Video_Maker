@@ -20,4 +20,4 @@ for i in range(1, 641):
     path = os.getcwd() + f"\Images\{zero}{i}.png"
     pyautogui.screenshot(path)
     print(i)
-    # time.sleep(1.5)
+    time.sleep(1.5)
